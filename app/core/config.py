@@ -1,12 +1,13 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+
 class Settings(BaseSettings):
     app_name: str = "AI Knowledge Base"
     debug: bool = True
     environment: str = "local"
 
     model_config = SettingsConfigDict(env_file=".env")
-    database_url: str = "postgresql+psycopg2://<username>:<password>@<host>:<port>/<database_name>"
+    database_url: str = "postgresql+psycopg://postgres:postgres@localhost:5432/ai_knowledge_base"
 
 
 settings = Settings()

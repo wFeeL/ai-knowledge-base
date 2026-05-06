@@ -6,7 +6,7 @@ from app.core.config import settings
 
 # psql engine
 engine = create_engine(settings.database_url)
-Session = sessionmaker(engine)
+SessionLocal = sessionmaker(engine)
 
 # use the session
 # with Session() as session:
